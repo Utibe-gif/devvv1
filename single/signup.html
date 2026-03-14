@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="single.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('.form');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.querySelector('.text').value;
+        if (name) {
+          localStorage.setItem('username', name);
+          window.location.href = 'index.html';
+        }
+      });
+    });
+  </script>
+<body>
+    <div class="speak">Wonder why you're single? Create an account to find out.</div>
+  <main class="card">
+    <h1 class="title">Create an account</h1>
+    <form class="form" novalidate>
+      <label class="field">
+        <span>Name:</span>
+        <input class="text" name="name" placeholder="@Username" required>
+      </label>
+      
+      <label class="checkboxField">
+        <input type="checkbox" name="agree" required>
+        <span><i>I agree to the terms.</i></span>
+      </label>
+      <button class="submit" type="submit">SIGN UP</button>
+    </form>
+  </main>
+</body>
+</html>
